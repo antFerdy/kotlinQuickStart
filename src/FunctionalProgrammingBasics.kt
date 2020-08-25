@@ -7,7 +7,14 @@ fun main() {
 
 //    mapDemo();
 
-    sortDemo()
+//    sortDemo()
+
+//    takeDemo()
+
+//    dropDemo()
+
+    sequenceDemo()
+
 }
 
 
@@ -90,6 +97,46 @@ fun sortDemo() {
     for (s in randomStrNumbers) {
         println(s)
     }
+}
+
+
+
+fun takeDemo() {
+    val listOfData = (0..999).toList()
+    var changedData = listOfData.take(30).map { "Hey it's me $it element" }
+    for(d in changedData) {
+        println(d)
+    }
+
+    println("##########################################")
+    var lastNList = listOfData.takeLast(40).map { "Hey it's me $it element" }
+    for(d in lastNList) {
+        println(d)
+    }
+}
+
+
+fun dropDemo() {
+    val listOfData = (0..999).toList()
+    var changedData = listOfData.drop(30).map { "Hey it's me $it element" }
+    for(d in changedData) {
+        println(d)
+    }
+
+    println("##########################################")
+    var lastNList = listOfData.dropLast(40).map { "Hey it's me $it element" }
+    for(d in lastNList) {
+        println(d)
+    }
+}
+
+
+fun sequenceDemo() {
+    var sequence = generateSequence(0) { it + 1 }
+    sequence.take(100).forEach { println(it) }
+    println("##########################################")
+    sequence.drop(100).forEach { println(it) } //будет выполняться вечно
+
 }
 
 
