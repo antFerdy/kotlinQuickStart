@@ -13,8 +13,11 @@ fun main() {
 
 //    dropDemo()
 
-    sequenceDemo()
+//    sequenceDemo()
 
+//    letDemo()
+
+    withDemo()
 }
 
 
@@ -140,7 +143,33 @@ fun sequenceDemo() {
 }
 
 
+fun letDemo() {
+    val name: String? = null
+    name?.let { println(it) }
+}
 
 
+fun withDemo() {
+    //can be nullable (outside the current thread for example)
+    var list: MutableList<Int>? = mutableListOf<Int>()
+
+
+    list?.let {
+        with(list) {
+            for (i in (0..99)) {
+                add((Math.random() * 100).toInt())
+            }
+            //all this without referencing to the list variable
+            //due to reference to this
+            println(sum())
+            println(average())
+            println(minOrNull())
+            println(maxOrNull())
+            println(first())
+        }
+    }
+
+
+}
 
 
