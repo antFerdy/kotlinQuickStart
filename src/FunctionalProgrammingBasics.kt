@@ -17,7 +17,10 @@ fun main() {
 
 //    letDemo()
 
-    withDemo()
+//    withDemo()
+
+//    zipDemo()
+    flatMapDemo()
 }
 
 
@@ -168,6 +171,51 @@ fun withDemo() {
             println(first())
         }
     }
+}
+
+
+fun zipDemo() {
+    var names = mutableSetOf<String>()
+    var telephones = mutableSetOf<Int>()
+
+
+    for (i in (0..99)) {
+        val tel = Random.nextInt(until = 10) + 1 * 10_000_000
+        telephones.add(tel)
+        names.add("Contact#$tel")
+    }
+
+    val zippedSet = names.zip(telephones, transform= { name: String, tel: Int -> "$name: has telephone: $tel"})
+    for (z in zippedSet) {
+        println(z)
+    }
+}
+
+
+fun flatMapDemo() {
+    val myWorkingDays = listOf (
+        listOf("Mon", "Wed", "Fri"),
+        listOf("Tue", "Thursday", "Saturday"),
+        listOf("Monday", "Wensday")
+    )
+
+
+    val days = myWorkingDays.flatMap { it } //could replace to flatten
+    for (day in days)
+        println(day)
+
+
+    println("##############")
+    val schedule = mapOf(
+            "Monday" to listOf("19:00", "21:00", "23:00"),
+            "Wednesday" to listOf("17:00", "19:00", "23:00"),
+            "Thursday" to listOf("16:00", "22:00", "23:30")
+    )
+
+    val times = schedule.flatMap { it.value }
+    for (t in times)
+        println(t)
+
 
 
 }
