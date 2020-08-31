@@ -20,7 +20,10 @@ fun main() {
 //    withDemo()
 
 //    zipDemo()
-    flatMapDemo()
+
+//    flatMapDemo()
+
+    highOrderFunDemo();
 }
 
 
@@ -216,8 +219,20 @@ fun flatMapDemo() {
     for (t in times)
         println(t)
 
+}
 
 
+fun highOrderFunDemo() {
+    val l = (0..101).toList()
+    val stringCollection = transformCollection<Int, String>(l) { "Value of element $it"}
+    for (str in stringCollection) {
+        println(str)
+    }
+}
+
+
+inline fun <T, R> transformCollection(list: List<T>, transform: (T) -> R): List<R> {
+    return list.map{it -> transform(it)}
 }
 
 
