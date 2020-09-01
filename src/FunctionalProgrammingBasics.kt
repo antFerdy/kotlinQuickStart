@@ -23,7 +23,9 @@ fun main() {
 
 //    flatMapDemo()
 
-    highOrderFunDemo();
+//    highOrderFunDemo()
+
+    extensionFunctionDemo()
 }
 
 
@@ -233,6 +235,20 @@ fun highOrderFunDemo() {
 
 inline fun <T, R> transformCollection(list: List<T>, transform: (T) -> R): List<R> {
     return list.map{it -> transform(it)}
+}
+
+
+fun extensionFunctionDemo() {
+    println(6.isPrime())
+    println(5.isPrime())
+}
+
+fun Int.isPrime(): Boolean {
+    if (this <= 3) return true
+    for( i in 2 until this - 1) {
+        if(this%i == 0) return false
+    }
+    return true
 }
 
 
