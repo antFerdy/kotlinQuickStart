@@ -25,7 +25,21 @@ fun main() {
 
 //    highOrderFunDemo()
 
-    extensionFunctionDemo()
+//    extensionFunctionDemo()
+
+//    extensionWithDemo()
+
+    extensionGenericDemo()
+
+
+    val list = (0..101).toList()
+
+    println("List example in main")
+    genericExtensionFun(list) {
+        println(average())
+        println(sum())
+        println(size)
+    }
 }
 
 
@@ -250,5 +264,52 @@ fun Int.isPrime(): Boolean {
     }
     return true
 }
+
+//данный метод во входных параметрах расширяет входной тип
+inline fun<T> myWith(collection: List<T>, operation: List<T>.() -> Unit) {
+    collection.operation()
+}
+
+fun extensionWithDemo() {
+    val list = (0..101).toList()
+
+    //в первом параметре передаем объект, а второй параметр это функция - ее мы можем выносить за скобки
+    myWith(list) {
+        println(average())
+        println(sum())
+        println(size)
+    }
+}
+
+
+inline fun<T, R> genericExtensionFun(obj: T, operation: T.() -> R): R {
+    return obj.operation()
+}
+
+
+fun extensionGenericDemo() {
+    val list = (0..101).toList()
+
+    println("List example")
+    genericExtensionFun(list) {
+        println(average())
+        println(sum())
+        println(size)
+    }
+
+    println("Map example")
+    val map = mapOf("Rustem" to 29, "Aisulu" to 29, "Daniyar" to 2)
+    val values = genericExtensionFun(map) {
+        println(keys)
+        values
+    }
+
+    println(values)
+}
+
+
+
+
+
 
 
