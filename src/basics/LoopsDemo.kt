@@ -1,11 +1,11 @@
-
+package basics
 
 fun main() {
-//    forLoop()
-//    forLoopWithRange()
-//    forloopWithUntil()
-//    forLoopWithDownTo()
-//    forLoopWithIndexesAndValue()
+//    basics.forLoop()
+//    basics.forLoopWithRange()
+//    basics.forloopWithUntil()
+//    basics.forLoopWithDownTo()
+//    basics.forLoopWithIndexesAndValue()
     forLoopWithIndex()
 
 }

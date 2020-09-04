@@ -1,8 +1,10 @@
+package basics
+
 fun main() {
 
-//    println(sub("hey"))
-//    println(sum(1, 2, 3, 4))
-//    defaultParamDemo("Ivan", "Ivanov", "Soyer")
+//    println(basics.sub("hey"))
+//    println(basics.sum(1, 2, 3, 4))
+//    basics.defaultParamDemo("Ivan", "Ivanov", "Soyer")
     defaultParamDemo(pattronymic = "Soyer")
 }
 

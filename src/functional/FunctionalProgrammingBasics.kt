@@ -1,40 +1,42 @@
+package functional
+
 import kotlin.random.Random
 
 fun main() {
-//    lambdaDemo();
+//    functional.lambdaDemo();
 
-//    filterDemo()
+//    functional.filterDemo()
 
-//    mapDemo();
+//    functional.mapDemo();
 
-//    sortDemo()
+//    functional.sortDemo()
 
-//    takeDemo()
+//    functional.takeDemo()
 
-//    dropDemo()
+//    functional.dropDemo()
 
-//    sequenceDemo()
+//    functional.sequenceDemo()
 
-//    letDemo()
+//    functional.letDemo()
 
-//    withDemo()
+//    functional.withDemo()
 
-//    zipDemo()
+//    functional.zipDemo()
 
-//    flatMapDemo()
+//    functional.flatMapDemo()
 
-//    highOrderFunDemo()
+//    functional.highOrderFunDemo()
 
-//    extensionFunctionDemo()
+//    functional.extensionFunctionDemo()
 
-//    extensionWithDemo()
+//    functional.extensionWithDemo()
 
     extensionGenericDemo()
 
 
     val list = (0..101).toList()
 
-    println("List example in main")
+    println("List example in basics.functional.main")
     genericExtensionFun(list) {
         println(average())
         println(sum())
@@ -265,6 +267,8 @@ fun Int.isPrime(): Boolean {
     return true
 }
 
+
+//inline extension functions
 //данный метод во входных параметрах расширяет входной тип
 inline fun<T> myWith(collection: List<T>, operation: List<T>.() -> Unit) {
     collection.operation()

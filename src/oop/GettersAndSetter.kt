@@ -18,7 +18,7 @@ class User {
 
 }
 
-//fun main() {
+//fun basics.functional.main() {
 //    val u = User()
 //    u.age = -1
 //    u.name = null

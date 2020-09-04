@@ -1,11 +1,13 @@
+package basics
+
 import java.util.*
 import kotlin.collections.ArrayList
 
 fun main() {
-//    arrayDemo()
-//    arrayDemoNullable()
+//    basics.arrayDemo()
+//    basics.arrayDemoNullable()
 
-//    arrayListDemo()
+//    basics.arrayListDemo()
     listMutableDemo()
 }
 

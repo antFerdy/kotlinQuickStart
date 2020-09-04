@@ -1,8 +1,10 @@
+package basics
+
 fun main() {
-//    nullableAny()
-//    unitDemo()
-//    whenDemo("September")
-//    whenDemoWithRange(6)
+//    basics.nullableAny()
+//    basics.unitDemo()
+//    basics.whenDemo("September")
+//    basics.whenDemoWithRange(6)
     whenDemoWithoutParam()
 }
 
